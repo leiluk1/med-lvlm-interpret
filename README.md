@@ -1,6 +1,12 @@
-# Medical LVLM-Interpret: An Interpretability Tool for Large Vision-Language Models
+# Medical LVLM-Interpret: An interpretability tool for medical VLM
 
-This repository provides the implementation for LVLM-Interpret tool specifically adapted for use with the LLaVA model's medical version -- LLaVA-Med.
+This repository provides the implementation for LVLM-Interpret tool specifically adapted for use with the LLaVA model's medical version - LLaVA-Med.
+
+## Project structure
+
+- `notebooks/demo_llava_med.ipynb` — Main notebook for running the interpretability experiment.
+- `LLaVA-Med/` — LLaVA-Med model submodule.
+- `lvlm-interpret/` — LVLM-Interpret supporting components.
 
 ## Set up for the interpretability part
 
@@ -23,9 +29,9 @@ This repository provides the implementation for LVLM-Interpret tool specifically
     pip install accelerate --upgrade
 ```
 
-### Fixing some bugs
+### Fixing bugs
 
-1. Update some libraries:
+1. Update some libraries if needed:
 ```
     pip install transformers --upgrade
     apt-get install build-essential
@@ -33,12 +39,12 @@ This repository provides the implementation for LVLM-Interpret tool specifically
     pip install pydantic -U
 ```
 
-2. Add `cache_position=None` to `forward()` method in `LlavaMistralForCausalLM`. Path: `LLaVA-Med/llava/model/language_model/llava_mistral.py`.
+2. For LLaVA-Med part: Add `cache_position=None` to `forward()` method in `LlavaMistralForCausalLM`. Path: `LLaVA-Med/llava/model/language_model/llava_mistral.py`.
 
-3. `conv_mistral_instruct` change to `sep="<s>"`.
+3. For LLaVA-Med part: `conv_mistral_instruct` change to `sep="<s>"`.
 
 
-## Related Projects
+## Related projects
 
 - [LVLM-Interpret](https://github.com/IntelLabs/lvlm-interpret)
 
